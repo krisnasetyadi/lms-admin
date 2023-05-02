@@ -1,5 +1,5 @@
-#Notes
-Experimenta App Directory 
+# Notes
+Experimental App Directory 
 Template for CMS like idx
 
 ## Techstack
