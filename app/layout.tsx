@@ -1,6 +1,10 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-
+import Client from './component/client-component'
+import NavbarComponent from './component/(navbar)/navbar-component'
+import SideBarComponent from './component/sidebar-component'
+// import { Provider } from 'react-redux'
+// import rootStore from './store/slice'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -15,7 +19,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* <Provider store={rootStore}> */}
+        <Client>
+          <NavbarComponent/>
+        </Client>
+        <div className='flex'>
+          <SideBarComponent />
+          {children}
+        </div>
+        {/* </Provider> */}
+      </body>
     </html>
   )
 }
