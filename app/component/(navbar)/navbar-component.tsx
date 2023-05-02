@@ -17,8 +17,8 @@ const NavbarComponent: FC<NavbarComponentProps> = ({}) => {
   const onClickDrawer = () => store.dispatch(setIsOpen(!isOpen))
 
   return (
-    <nav className='bg-red-400'>
-        <div className='max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-2 px-4'>
+    <nav className='bg-[#fffeff]'>
+        <div className='max-w-[2520px] mx-auto xl:px-8 md:px-4 sm:px-2'>
             <div className='flex flex-row justify-between'>
                 <button 
                   onClick={onClickDrawer} 

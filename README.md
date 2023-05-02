@@ -6,8 +6,10 @@
   <li>Redux</li>
   <li>React Icons</li>
 </ul>
+
 ## Getting Started
 
+Node JS version 16.14.0
 First, run the development server:
 
 ```bash

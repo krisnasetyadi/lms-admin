@@ -2,6 +2,8 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Client from './component/client-component'
 import NavbarComponent from './component/(navbar)/navbar-component'
+import { Content } from './(navigation)/main-navigation'
+
 import SideBarComponent from './component/sidebar-component'
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,10 +24,12 @@ export default function RootLayout({
           <NavbarComponent/>
         </Client>
         <div className='flex'>
-        <Client>
-          <SideBarComponent />
-        </Client>
-          {children}
+          <Client>
+            <SideBarComponent />
+          </Client>
+          <Content>
+            {children}
+          </Content>
         </div>
       </body>
     </html>

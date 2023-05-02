@@ -1,12 +1,12 @@
-
-import ClientOnly from "./component/client-component"
-
+import { MainNavigation as App} from './(navigation)/main-navigation'
+import Client from './component/client-component'
 export default function Home() {
+  // flex min-h-screen flex-col items-center justify-between w-full p-24 bg-[#eae8ea]/
   return (
-    <ClientOnly>
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    asdqwe
-    </main>
-    </ClientOnly>
+      <main>
+        {/* <Client> */}
+          <App />
+        {/* </Client> */}
+      </main>
   )
 }
