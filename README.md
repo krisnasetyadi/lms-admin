@@ -1,3 +1,7 @@
+#Notes
+Experimenta App Directory 
+Template for CMS like idx
+
 ## Techstack
 
 <ul>
