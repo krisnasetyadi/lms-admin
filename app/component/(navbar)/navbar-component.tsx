@@ -6,6 +6,7 @@ import { RootStore, store } from '@/app/store'
 import { setIsOpen } from '@/app/store/sidebarReducer'
 import { useSelector } from 'react-redux'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import NavMenuComponent from './nav-menu-component'
 
 interface NavbarComponentProps {
   
@@ -26,6 +27,7 @@ const NavbarComponent: FC<NavbarComponentProps> = ({}) => {
                   className="h-12"> 
                   <GiHamburgerMenu className='h-10 w-10 p-2' /> 
                 </button>
+                <NavMenuComponent />
                 <Logo/>
             </div>
         </div>

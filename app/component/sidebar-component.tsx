@@ -1,23 +1,27 @@
 'use client'
 
-import React, { FC, ReactNode } from "react"
+import React, { FC, ReactNode, useEffect, useState } from "react"
 import { RootStore } from '@/app/store'
 import { useSelector } from 'react-redux'
-import type { MenuProps } from '../types/type'
 import Image from "next/image"
 import SLogo from './../../public/s-logo.jpg'
 import Link from "next/link"
 import Menu from '../(navigation)/constant'
-import RoleContent from './role-content-component'
+import { usePathname } from "next/navigation"
+import { TbSquareRoundedChevronDownFilled } from 'react-icons/tb'
 
 interface SidebarComponentProps { 
 
 }
 
 const SideBarComponent: FC<SidebarComponentProps> = ({ }) => {
+  const pathname = usePathname()
   const { isOpen } = useSelector((state: RootStore )=> state.open)
+  const [onOpen, setOnOpen] = useState<boolean>(false)
   const { LectureSidebarMenu } = Menu
-
+  const onOpenMenu = () => {
+    setOnOpen(prev => !prev)
+  }
     return (
       <div className="flex">
         <div className={`${isOpen ? 'w-72' : 'w-20'} duration-300 h-full bg-[#3346d7]`}>
@@ -33,11 +37,39 @@ const SideBarComponent: FC<SidebarComponentProps> = ({ }) => {
             </div>
           </div>
           <ul className="space-y-4 mb-12 px-4 mt-8">
-            {LectureSidebarMenu && LectureSidebarMenu.map((item, idx) => {
+            {LectureSidebarMenu && LectureSidebarMenu.find(f => f.parentName.toLowerCase() === pathname.split('/')[1])?.childMenu.map((item, idx) => {
               const {title, icon:Icon, route} = item
+              if (item.childMenu) {
+                return (
+                  <li className="" key={`${title}-${idx}`}>
+                  <div className="flex justify-between">
+                    <Link href={`${pathname.split('/')[1]}/${route}`} className="flex gap-4 hover:text-gray-800 transition">
+                      <Icon className="w-4 h-4 text-[#e6fbff]" />
+                      {isOpen && <p className="text-[#e6fbff] font-semibold text-sm">{title}</p>}
+                    </Link>
+                    <TbSquareRoundedChevronDownFilled 
+                      onClick={onOpenMenu} 
+                      className={`h-6 w-6 text-[#e6fbff] ${onOpen ? 'rotate-90' : '' } duration-500`}
+                    />
+                  </div>
+                  {!onOpen && (<ul className="pl-4 pt-2">
+                    {item.childMenu.map((child, childIdx) => {
+                    const {title: childTitle, icon:ChildIcon, route:childRoute} = child
+                    return (
+                      <li className="py-2" key={`${idx}-${childIdx}`}>
+                        <Link href={`${pathname.split('/')[1]}/${childRoute}`} className="flex gap-4 hover:text-gray-800 transition">
+                          <ChildIcon className="w-4 h-4 text-[#e6fbff]" />
+                          {isOpen && <p className="text-[#e6fbff] font-semibold text-sm">{childTitle}</p>}
+                        </Link>
+                      </li>
+                    )})}
+                  </ul> )}
+                </li>
+                )
+            }
               return (
               <li key={`${title}-${idx}`}>
-                <Link href={`${route}`} className="flex gap-4 hover:text-gray-800 transition">
+                <Link href={`${pathname.split('/')[1]}/${route}`} className="flex gap-4 hover:text-gray-800 transition">
                   <Icon className="w-4 h-4 text-[#e6fbff]" />
                   {isOpen && <p className="text-[#e6fbff] font-semibold text-sm">{title}</p>}
                 </Link>

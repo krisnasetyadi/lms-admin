@@ -6,20 +6,58 @@ import { RiDiscussFill } from 'react-icons/ri'
 export default {
   LectureSidebarMenu: [
     {
-      icon: AiFillHome,
-      title: 'Course Info',
-      route: '/course-info'
+      parentName: 'Admin',
+      childMenu: [
+        {
+          icon: AiFillHome,
+          title: 'Course Info',
+          route: '/course-info',
+          childMenu: [
+            {
+              icon: FaBook,
+              title: 'Learning Activity',
+              route: '/course-info/learning-activity'
+            },
+            {
+                icon: RiDiscussFill,
+                title: 'Discussion',
+                route: '/course-info  /discussion'
+            },
+          ]
+        },
+        {
+          icon: FaBook,
+          title: 'Learning Activity',
+          route: '/learning-activity'
+        },
+        {
+            icon: RiDiscussFill,
+            title: 'Discussion',
+            route: '/discussion'
+          },
+      ]
     },
     {
-      icon: FaBook,
-      title: 'Learning Activity',
-      route: '/learning-activity'
+      parentName: 'Support',
+      childMenu: [
+        {
+          icon: AiFillHome,
+          title: 'Support Info',
+          route: '/support-info'
+        },
+        {
+          icon: FaBook,
+          title: 'Grade',
+          route: '/grade'
+        },
+        {
+            icon: RiDiscussFill,
+            title: 'Support Chat',
+            route: '/support-chat'
+          },
+      ]
     },
-    {
-        icon: RiDiscussFill,
-        title: 'Discussion',
-        route: '/discussion'
-      },
+  
   
   ],
 //   DiscussionSidebarMenu: [
