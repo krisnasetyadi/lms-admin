@@ -1,4 +1,7 @@
-# Learning Management System (LMS)
+# Notes
+
+Experimental App Directory
+Template for CMS like idx
 
 ## Techstack
 
