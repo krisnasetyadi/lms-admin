@@ -4,6 +4,7 @@
   <li>Next JS</li>
   <li>Tailwind CSS</li>
   <li>Redux</li>
+  <li>React Icons</li>
 </ul>
 ## Getting Started
 

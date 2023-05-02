@@ -1,6 +1,8 @@
 'use client'
 
 import React, { FC, useState } from "react"
+import { RootStore } from '@/app/store'
+import { useSelector } from 'react-redux'
 import Image from "next/image"
 
 interface SidebarComponentProps { 
@@ -8,7 +10,8 @@ interface SidebarComponentProps {
 }
 
 const SideBarComponent: FC<SidebarComponentProps> = ({}) => {
-    const [isOpen, setIsOpen] = useState<boolean>(true)
+  const { isOpen } = useSelector((state: RootStore )=> state.open)
+
     return (
         <div className={`${isOpen ? 'w-72' : 'w-20'} duration-300 h-screen bg-purple-500`}>
             <div className="mt-4 mx-4 relative overflow-auto overflow-x-hidden h-[85vh]">

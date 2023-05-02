@@ -11,7 +11,7 @@ interface ClientOnlyProps {
 const ClientOnly: FC<ClientOnlyProps> = ({ children }) => {
     return (
         <Provider store={store}>
-        {children}
+          {children}
         </Provider>
     )
 }

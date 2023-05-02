@@ -3,7 +3,7 @@ import { createSlice, configureStore, PayloadAction } from '@reduxjs/toolkit'
 const slice = createSlice({
     name: 'sidebar',
     initialState: {
-        isOpen: false
+        isOpen: true
     },
     reducers: {
         setIsOpen: (state, action: PayloadAction<boolean>) => {
@@ -13,11 +13,5 @@ const slice = createSlice({
 })
 
 export const {setIsOpen} = slice.actions
-// export const { isOpen } = slice.getInitialState()
-
-
-// const store = configureStore({
-//     reducer: {}
-//   })
 
 export default slice.reducer
