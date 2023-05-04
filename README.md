@@ -1,7 +1,7 @@
 # Notes
 
 Experimental App Directory
-Template for CMS like idx
+Template for CMS
 
 ## Techstack
 
@@ -10,11 +10,14 @@ Template for CMS like idx
   <li>Tailwind CSS</li>
   <li>Redux</li>
   <li>React Icons</li>
+  <li>React Hook Form</li>
+  <li>Yup</li>
 </ul>
 
 ## Getting Started
 
 Node JS version 16.14.0
+
 First, run the development server:
 
 ```bash
