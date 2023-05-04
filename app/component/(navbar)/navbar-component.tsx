@@ -27,7 +27,9 @@ const NavbarComponent: FC<NavbarComponentProps> = ({}) => {
                   className="h-12"> 
                   <GiHamburgerMenu className='h-10 w-10 p-2' /> 
                 </button>
-                <NavMenuComponent />
+      
+                  <NavMenuComponent />
+              
                 <Logo/>
             </div>
         </div>

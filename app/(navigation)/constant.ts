@@ -12,6 +12,11 @@ export default {
           icon: AiFillHome,
           title: 'Course Info',
           route: '/course-info',
+        },
+        {
+          icon: FaBook,
+          title: 'Learning Activity',
+          route: '/learning-activity',
           childMenu: [
             {
               icon: FaBook,
@@ -24,11 +29,6 @@ export default {
                 route: '/course-info  /discussion'
             },
           ]
-        },
-        {
-          icon: FaBook,
-          title: 'Learning Activity',
-          route: '/learning-activity'
         },
         {
             icon: RiDiscussFill,
