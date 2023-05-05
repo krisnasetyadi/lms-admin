@@ -50,7 +50,7 @@ export const mixFormattingNumber = (
   fourth: number, 
   fifth: number 
   }, separatorPositions: number[], separatorLengths: number[]): number | string => {
-    console.log('separatorPositions', separatorPositions)
+    // console.log('separatorPositions', separatorPositions)
     console.log('separatorLengths', separatorLengths)
   if(number && digits) {
     const { first, second, third, fourth, fifth } = digits
@@ -63,12 +63,12 @@ export const mixFormattingNumber = (
     if (!result) {
       return numberToString;
     }
-    console.log('result',result)
-    console.log('mapping on it', result.map(res => {
-      console.log('resultsss', res)
-    }))
-    console.log('length', result.slice(1).join('.').length)
-    console.log('result slice',result.slice(1).join('.').substring(0, result.slice(1).join('.').length - Number(fifth)))
+    // console.log('result',result)
+    // console.log('mapping on it', result.map(res => {
+    //   console.log('resultsss', res)
+    // }))
+    // console.log('length', result.slice(1).join('.').length)
+    // console.log('result slice',result.slice(1).join('.').substring(0, result.slice(1).join('.').length - Number(fifth)))
   //   let formatted = groups.slice(1).join('.');
   // formatted = formatted.substring(0, formatted.length - group5Digits) + '-' + formatted.substring(formatted.length - group5Digits);
     const formatted = result[1] + '.' + result[2] + '.' + result[3] + '.' + result[4] + '-' + result[5];

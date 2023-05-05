@@ -10,7 +10,6 @@ Template for CMS
   <li>Tailwind CSS</li>
   <li>Redux</li>
   <li>React Icons</li>
-  <li>React Hook Form</li>
   <li>Yup</li>
 </ul>
 
